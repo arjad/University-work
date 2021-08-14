@@ -1,0 +1,60 @@
+.MODEL SMALL
+ .STACK 100H
+
+ .DATA
+   PROMPT_1  DB  'Enter the binary number (max 16-bit) : $'
+   PROMPT_2  DB  'The given binary number (16-bit) is : $'
+
+ .CODE
+   MAIN PROC
+     MOV AX, @DATA                
+     MOV DS, AX
+
+     LEA DX, PROMPT_1             ;msg   
+     MOV AH, 9
+     INT 21H
+
+     XOR BX, BX                   ; clear BX 
+     MOV CX, 16                  ;    loop counter
+     MOV AH, 1                    ; input 
+
+     @INPUT:                      ; jump label
+       INT 21H                    ; interupt
+       CMP AL, 0DH                ; compare digit with carriage return 
+       JE @END                    ; jump to label @END if carriage return
+       AND AL, 0FH                ; convert ascii to decimal code
+       SHL BX, 1                  ; rotate BX to left by 1 bit
+       OR BL, AL                  ; set the LSB of BX with input
+     LOOP @INPUT                  ; jump to label @INPUT
+
+     @END:                        ; jump label
+    
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    
+    
+     LEA DX, PROMPT_2             ; load and display PROMPT_2   
+     MOV AH, 9
+     INT 21H
+
+     MOV CX, 16                  ; initialize loop counter
+     MOV AH, 2                    ; set output function
+
+     @OUTPUT:                     ; jump label
+       SHL BX, 1                  ; shift left BX by 1 bit
+
+       JNC @ZERO                  ; jump to label @ZERO if CF=0
+         MOV DL, 31H              ; set DL=1
+         JMP @DISPLAY             ; jump to label @DISPLAY
+
+       @ZERO:                     ; jump label
+         MOV DL, 30H              ; set DL=0
+
+       @DISPLAY:                  ; jump label
+         INT 21H                  ; display digit
+     LOOP @OUTPUT                 ; jump to label @OUTPUT
+
+     MOV AH, 4CH                  ; return control to DOS
+     INT 21H
+   MAIN ENDP
+ END MAIN

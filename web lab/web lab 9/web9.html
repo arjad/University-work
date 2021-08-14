@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            border: 1px solid;
+            box-shadow:inset 0px 0px 7px 2px black;
+            margin: auto;
+            padding: 10px;
+            width:35%;
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition-duration: 1s;
+        }
+        h1:hover{
+            transform: scale(0.8);
+            cursor: pointer;
+        }
+        form{
+            /* border: 1px solid black; */
+            height:430px;
+            width:450px;
+            position: relative;
+        }
+        input{
+            border: 1px solid;
+        }
+        input:focus{
+            box-shadow:4px 4px  #1a73e7;
+        }
+        #fname{
+            height:35px;
+            width:47%;
+            float:left;
+            border-radius: 7%;
+        }
+        #lname{
+            height:35px;
+            width:47%;
+            float:right;
+            border-radius: 7%;
+        }
+        #email{
+            height:35px;
+            width:98%;
+            margin-top: 27px;
+            border-radius: 7%;
+        }
+        .gmail{
+            position: absolute;
+            right:20px;
+            top:62px;
+        }
+        #p2,#signin{
+            font-weight: bold;
+            color: #1a73e7;
+        }   
+        #pass1,#pass2{
+            height:35px;
+            width:40%;
+            float:left;
+            border-radius: 7%;
+        }
+        #pass2{
+            margin-left: 9px;
+        }
+        button{
+            background-color: #1a73e7;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            height:50px;
+            width:100px;
+            border-radius: 10%;
+            border: 1px solid #1a73e7;
+            float: right;
+            margin-top: -59px;
+        }
+        #eye{
+            font-size: 40px;
+            margin-top: -10px;
+        }
+        button:hover{
+            background-color: white;
+            color: #1a73e7;
+        }
+    </style>
+</head>
+<body>
+    <div class="d">
+
+    <h1>CREATE YOUR GOOGLE ACCOUNT</h1><br>
+    <form name="form1">
+        <input id="fname" type="text" placeholder="First name">
+        <input id="lname" type="text" placeholder="Last name">
+
+        <input id="email" type="email" placeholder="UserName">
+        <p class="gmail">@gmail.com</p>
+        <p id="p">You can use letters, numbers & periods</p>
+
+        <p id="p2">Use my current email adress, instead</p>
+
+        <input id="pass1" type="password" placeholder="Password">
+        <input id="pass2" type="password" placeholder="Confirm">
+        <i id="eye">&#128065</i>
+
+        <br><br>
+        <p>Use 8 or more characters with mix of letters, numbers &<br> symbols</p>        
+
+        <br><br>
+        <p id ="signin">SignIn Instead</p>
+        <button type="submit">Next</button>
+    </form>
+
+    </div>
+</body>
+</html>

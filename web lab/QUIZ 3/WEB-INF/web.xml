@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+	<servlet>
+		<servlet-name>First</servlet-name>
+		<servlet-class>First</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>First</servlet-name>
+		<url-pattern>/First</url-pattern>
+	</servlet-mapping>
+
+	
+
+	<servlet>
+		<servlet-name>xyz</servlet-name>
+		<servlet-class>Second</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>xyz</servlet-name>
+		<url-pattern>/HelloWorld</url-pattern>
+	</servlet-mapping>
+
+	
+
+
+	<servlet>
+		<servlet-name>Greeting</servlet-name>
+		<servlet-class>Greeting</servlet-class>
+	</servlet>
+
+	
+
+	<servlet>
+		<servlet-name>Display</servlet-name>
+		<servlet-class>Display</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Display</servlet-name>
+		<url-pattern>/Display</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Displayintables</servlet-name>
+		<servlet-class>Displayintables</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Displayintables</servlet-name>
+		<url-pattern>/Displayintables</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>Java</servlet-name>
+		<servlet-class>Java</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Java</servlet-name>
+		<url-pattern>/Java</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>

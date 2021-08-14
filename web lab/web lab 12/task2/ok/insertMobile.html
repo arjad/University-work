@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            height:400px;
+            width: 35%;
+            margin: auto;
+            background-color:  cadetblue;
+            box-sizing: border-box;
+            padding: 20px;
+            border:10px double black;
+        }
+        h1{
+            margin: auto;
+            text-align: center;
+        }
+        form:hover{
+            background-color:rgb(32, 141, 145);
+        }
+        button{
+            background-color: chartreuse;
+            color:white;
+            font-weight: bold;
+            height:29px;
+            width:120px;
+            border: none;
+            font-size: 21px;
+        }
+        button:hover{
+            background-color: white;            
+            color:chartreuse;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <form action="SearchMobile" method="POST">
+        <h1>CAR INFO</h1><br><br>
+        Company name : <input type="text" name="comp" value="landcruser"><br><br>
+        Model : <input type="text" name="mod" value="2020" ><br><br>
+        Price : <input type="text" name="pr" value="30000"><br><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

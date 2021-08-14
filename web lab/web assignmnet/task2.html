@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            border: 1px solid;
+            height:330px;
+            width:37%;
+            margin: auto;
+        }
+        h1{
+            margin-left: 30px;
+            color:#0f90f2;
+        }
+        form{
+            /* border: 1px solid; */
+            height:200px;
+            width:79%;
+            margin-left: 100px;
+            
+        }
+        input{
+            height:30px;
+            width:250px;
+            margin-top: 15px;
+            margin-left: -35px;
+        }
+        button{
+            background-color: #0f90f2;
+            height:30px;
+            width: 100px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            border:1px solid;
+            margin-top: 20px;
+            margin-left: 200px;
+            transition-duration: .5s;
+        }
+        button:hover{
+            background-color: white;
+            transform: scale(1.2);
+            color:#0f90f2;
+            border:3px solid #0f90f2;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="d">
+        <h1>SIGN UP FORM</h1>
+<form id="f">
+    <input type="text" value="arjad" id="name" placeholder="first Name"  required><p id="np" style="margin-top:-25px;margin-left: 230px;font-size:14px;color:red"></p>
+    <input type="text" value="gohar" id="name" placeholder="last Name"  required><p id="np2" style="margin-top:-25px;margin-left: 230px;font-size:14px;color:red"></p>
+    <input type="text" value="arjad@gmail.com" id="email" placeholder="Email" required><p id="ep" style="margin-top:-25px;margin-left: 230px;font-size:14px;color:red"></p>
+    <input type="password" value="123" id="pass" placeholder="Password" required><p id="pp" style="margin-top:-25px;margin-left: 230px;font-size:14px;color:red"></p>
+    <input type="password" value="123" id="c_pass" placeholder="Confirm Password" required><p id="cpp" style="margin-top:-25px;margin-left: 230px;font-size:14px;color:red"></p>
+</form>
+<button type="submit" onClick="submit()">Submit</button>
+</div>
+
+<script>
+ 
+function submit()
+{
+    var n=document.getElementById("name");
+    var e=document.getElementById("email");
+    var p=document.getElementById("pass");
+    var cp=document.getElementById("c_pass");
+
+    var np=document.getElementById("np");
+    var ep=document.getElementById("ep");
+    var pp=document.getElementById("pp");
+    var cpp=document.getElementById("cpp");
+
+//check empty or not
+    if(n.value=="")
+    {
+        n.style.border="1px solid red"
+        n.style.background="lightpink"
+        np.innerHTML=" Fill this field ";
+    }   
+    if(e.value=="")
+    {
+        e.style.background="lightpink"
+        e.style.border="1px solid red"
+        ep.innerHTML=" Fill this field ";
+    }  
+    if(p.value=="")
+    {
+        p.style.background="lightpink"
+        p.style.border="1px solid red"
+        pp.innerHTML=" Fill this field ";
+    }  
+    if(cp.value=="")
+    {
+
+        cp.style.background="lightpink"
+        cp.style.border="1px solid red"
+        cpp.innerHTML=" Fill this field ";
+    }  
+////////////////////////////
+//password check
+check()
+function check()
+{
+    // alert("check")
+    if(p.value==cp.value)
+    {
+        cp.style.border="1px solid green"
+        cpp.style.color="green"
+        cpp.innerHTML=" Password Matches ";
+    }
+    else{
+        cp.style.border="1px solid red"
+        cpp.style.color="red"
+        cpp.innerHTML=" Password not Matched ";
+    }
+}
+//////////////////////////
+//email validate
+ee(e.value)
+function ee(em)
+{
+    // alert(em.length)
+ if((em.indexOf("@") != -1) && (em.indexOf(".") != -1))
+ {
+    //  alert("@ . present")
+   if(em.length >= 8)//check length
+   {
+    //    alert("len ok")
+     if(em.indexOf("@")>0)//check @ is not at start
+     {
+        // alert("@>0")
+        if(em.indexOf(".")>em.indexOf("@")+1)//@ is before . 
+        {            
+            // alert(".>@")
+            e.style.border="1px solid green"
+            ep.style.color="green"
+            ep.innerHTML=" Correct Email Format ";
+        }
+        else
+        {
+        e.style.border="1px solid red"
+        ep.style.color="red"
+        ep.innerHTML=" @ is after . ";
+        }
+        
+     }
+     else
+     {
+        e.style.border="1px solid red"
+        ep.innerHTML=" @ is after . ";
+     }
+    
+    }
+    else
+    {
+        e.style.border="1px solid red"
+        ep.innerHTML=" Length is too small ";
+     }
+    }
+    else{
+        e.style.border="1px solid red"
+        ep.innerHTML=" it should have @ and . s";
+     }
+
+
+   }
+
+
+ 
+}
+
+
+
+// alert("Your Form is SUBMITTED")   
+
+</script>    
+</body>
+</html>

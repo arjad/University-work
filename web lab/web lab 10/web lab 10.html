@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab10</title>
+    <style>
+        .d{
+            border: 1px solid black;
+            height:300px;
+            width:30%;
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: space-between;
+        }
+        input{
+            margin-left: 100px;
+            width: 216px;
+            height:30px;
+        }
+        input:focus{
+            box-shadow:0px 0px 7px 9px yellow;
+        }
+        label{
+            margin-left: 40px;
+        }
+        button{
+            background-color: gray;
+            border:1px solid;
+            font-weight: bold;
+            border-radius: 5px;
+            height:20px;
+            width:50px;
+            margin-left: 8px; 
+            display: inline-block;
+            transition-duration: .5s;
+        }
+        button:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+            background-color: yellow;
+        }
+        .add{
+            margin-left: 90px;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <form class="d">
+        <label for="n1">No1</label>
+        <input type="text" name="n1" id="n1" required/>
+
+        <label for="n2">No2</label>
+        <input type="text" name="n2" id="n2" required/>
+
+        <label for="r">Result</label>
+        <input type="text" name="r" id="r" />
+   
+        <br>
+        <div class="b">
+        <button type="button" class="add" onclick="add()">ADD</button>
+        <button type="button" class="sub" onclick="sub()">SUB</button>
+        <button type="button" class="mul" onclick="mul()">MUL</button>
+        <button type="button" class="div" onclick="div()">DIV</button>
+        </div>
+    </form> 
+    
+    
+    <!-- /////////////////////////////////////////////////////////////////// -->
+<script>
+    document.addEventListener("keydown",function(e){
+        if(e.keyCode >= 48 && e.keyCode <= 57)
+        {
+            console.log("0-9")
+        }
+        else if(e.keyCode >= 65 && e.keyCode <= 122){
+            alert("ERROR! Please enter Numeric values only")
+        }
+    })
+
+
+    function add()
+    {
+   
+    var no1=document.getElementById("n1").value;
+    var n1=parseInt(no1)
+    // document.getElementById("n1").value=no1;
+    var no2=document.getElementById("n2").value;
+    var n2=parseInt(no2)
+    // document.getElementById("n2").value=no2;
+    var res=document.getElementById("r"); 
+    
+    var r=n1+n2;
+    res.value= r;
+    console.log("res",res.value)
+    console.log("r",r)
+    
+    }
+    function sub()
+    {
+
+    var no1=document.getElementById("n1").value;
+    var n1=parseInt(no1)
+    var no2=document.getElementById("n2").value;
+    var n2=parseInt(no2)
+        
+    var r=n1-n2;
+    document.getElementById("r").value = r;
+    
+    }
+    function mul()
+    {
+    var no1=document.getElementById("n1").value;
+    var n1=parseInt(no1)
+    // document.getElementById("n1").value=no1;
+    var no2=document.getElementById("n2").value;
+    var n2=parseInt(no2)
+    // document.getElementById("n2").value=no2;
+
+    
+    var r=n1*n2;
+    document.getElementById("r").value = r;
+    
+    }
+    function div()
+    {
+        // e.preventDeafult();
+    var no1=document.getElementById("n1").value;
+    var n1=parseInt(no1)
+    // document.getElementById("n1").value=no1;
+    var no2=document.getElementById("n2").value;
+    var n2=parseInt(no2)
+    // document.getElementById("n2").value=no2;
+
+    
+    var r=n1/n2;
+    document.getElementById("r").value = r;
+    
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head><title>HTML FORM</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Times New Roman", Times, serif;
+        }
+        form{
+            border: 10px solid #bed3d7;
+            height:500px;
+            width:30%;
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+        form:hover{
+            border: 10px solid #17b5d4;
+
+        }
+        #inst{
+            height:100px;
+            width:80%;
+        }
+        button{
+            height:27px;
+            width:70px;
+            margin-left: 15px;
+            border: none;
+        }
+        button:hover{
+            background-color: #17b5d4;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="Lab" method="POST">
+        <h1>User Input Form</h1>
+        <fieldset>
+            <legend>Personal Particular</legend>
+            Name: <input name="name" value="arjad gohar">   <br><br>
+            Password: <input name="pass" value="123">   <br><br>
+            Gender: <input type="radio" name="m" checked>Male <input type="radio" name="f" checked> Female <br><br>
+            Age: <select name="age" id = "age">
+                <option value = "1"> < one year old </option>
+                <option value = "2">< 10 year old</option>
+                <option value = "3">< 20 year old</option>
+                <option value = "4">< 30 year old</option>
+              </select>
+              <br>
+        </fieldset>
+        <fieldset>
+            <legend>Languages</legend>
+            <input name="java" type="checkbox" checked>Java
+            <input name="cplus" type="checkbox"checked>C/C++
+            <input name="sharp" type="checkbox"checked>C#
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Instruction</legend>
+            <input name="inst" id="inst" type="text" value="All your instructions" placeholder="Enter your instructions here ... ">
+
+        </fieldset>
+        <br>
+
+        <button>Send</button><button type="reset">Clear</button>
+    </form>
+    
+</body>
+</html>
